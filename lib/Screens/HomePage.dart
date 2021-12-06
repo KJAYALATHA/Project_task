@@ -5,6 +5,7 @@ import 'package:flutter_task_project/Widgets/HomeContent/HomeContentTab.dart';
 import 'package:flutter_task_project/Widgets/Navigation/NavigationDarwer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import '../Widgets/Navigation/Navigational_bar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_task_project/Widgets/UserDeatails.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _firestore = FirebaseFirestore.instance;
+  void getNotification() async {
+    print('|||||||||||||||||||||||||||||||||||||||______|||______');
+    final time = await _firestore.collection('webinar').get();
+    for (var i in time.docs) {
+      print(i);
+      print('|||||||||||||||||||||||||||||||||||||||____________');
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getNotification();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(

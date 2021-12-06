@@ -94,5 +94,28 @@
       loadMainDartJs();
     }
   </script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!--  &lt;!&ndash; TODO: Add SDKs for Firebase products that you want to use-->
+<!--       https://firebase.google.com/docs/web/setup#available-libraries &ndash;&gt;-->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <script>
+      var firebaseConfig = {
+    apiKey: "AIzaSyARXHhzjK6nz5L4fdz7e_kK7rPrFumSdqw",
+    authDomain: "projecttest-9d1f4.firebaseapp.com",
+    projectId: "projecttest-9d1f4",
+    storageBucket: "projecttest-9d1f4.appspot.com",
+    messagingSenderId: "583666580462",
+    appId: "1:583666580462:web:de03fcad918351b1b8ecff"
+  };
+
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+  </script>
 </body>
 </html>
